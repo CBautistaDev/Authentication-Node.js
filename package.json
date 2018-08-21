@@ -8,6 +8,7 @@
     "start": "node app"
   },
   "dependencies": {
+    "@auth0/angular-jwt": "^2.0.0",
     "bcryptjs": "*",
     "bluebird": "*",
     "body-parser": "*",

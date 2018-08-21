@@ -8,7 +8,10 @@ const config = require('./config/database');
 
 // Connect To Database
 mongoose.Promise = require('bluebird');
-mongoose.connect(config.database, { useMongoClient: true, promiseLibrary: require('bluebird') })
+mongoose.connect(config.database, {
+    useMongoClient: true,
+    promiseLibrary: require('bluebird')
+  })
   .then(() => console.log(`Connected to database ${config.database}`))
   .catch((err) => console.log(`Database error: ${err}`));
 
@@ -17,7 +20,7 @@ const app = express();
 const users = require('./routes/users');
 
 // Port Number
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 // CORS Middleware
 app.use(cors());
@@ -40,8 +43,11 @@ app.use('/users', users);
 app.get('/', (req, res) => {
   res.send('Invalid Endpoint');
 });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
 
 // Start Server
 app.listen(port, () => {
-  console.log('Server started on port '+port);
+  console.log('Server started on port ' + port);
 });
