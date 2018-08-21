@@ -789,9 +789,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var UploadPictureComponent = /** @class */ (function () {
     function UploadPictureComponent(http) {
         this.http = http;
-        this.imageStyle1 = "assets/art1.jpg";
-        this.imageStyle2 = "assets/art2.jpg";
-        this.imageStyle3 = "assets/convert-steps/step2.jpg";
+        this.imageStyle1 = 'assets/art1.jpg';
+        this.imageStyle2 = 'assets/art2.jpg';
+        this.imageStyle3 = 'assets/convert-steps/step2.jpg';
         this.isLoading = false;
         this.selectedFile = null;
         this.toogleBool = true;
@@ -799,22 +799,22 @@ var UploadPictureComponent = /** @class */ (function () {
     }
     UploadPictureComponent.prototype.reset = function () {
         console.log(this.myLocalInputVariable.nativeElement.files);
-        this.myLocalInputVariable.nativeElement.value = "";
+        this.myLocalInputVariable.nativeElement.value = '';
         console.log(this.myLocalInputVariable.nativeElement.files);
     };
     UploadPictureComponent.prototype.reset2 = function () {
         console.log(this.myLocalInputVariable2.nativeElement.files);
-        this.myLocalInputVariable2.nativeElement.value = "";
+        this.myLocalInputVariable2.nativeElement.value = '';
         console.log(this.myLocalInputVariable2.nativeElement.files);
     };
     UploadPictureComponent.prototype.reset3 = function () {
         console.log(this.myLocalInputVariable3.nativeElement.files);
-        this.myLocalInputVariable3.nativeElement.value = "";
+        this.myLocalInputVariable3.nativeElement.value = '';
         console.log(this.myLocalInputVariable3.nativeElement.files);
     };
     UploadPictureComponent.prototype.reset4 = function () {
         console.log(this.myLocalInputVariable4.nativeElement.files);
-        this.myLocalInputVariable4.nativeElement.value = "";
+        this.myLocalInputVariable4.nativeElement.value = '';
         console.log(this.myLocalInputVariable4.nativeElement.files);
     };
     UploadPictureComponent.prototype.onURLinserted = function () {
@@ -822,16 +822,16 @@ var UploadPictureComponent = /** @class */ (function () {
         this.getImage(this.myURL).subscribe(function (data) {
             _this.createImageFromBlob(data);
         }, function (error) {
-            console.log("Error occured", error);
+            console.log('Error occured', error);
         });
     };
     UploadPictureComponent.prototype.getImage = function (imageUrl) {
-        return this.http.get(imageUrl, { responseType: "blob" });
+        return this.http.get(imageUrl, { responseType: 'blob' });
     };
     UploadPictureComponent.prototype.createImageFromBlob = function (image) {
         var _this = this;
         var reader = new FileReader();
-        reader.addEventListener("load", function () {
+        reader.addEventListener('load', function () {
             _this.image1 = reader.result; // here is the result you got from reader
         }, false);
         if (image) {
@@ -876,27 +876,27 @@ var UploadPictureComponent = /** @class */ (function () {
     UploadPictureComponent.prototype.onUpload = function () {
         var _this = this;
         var fd = new FormData();
-        fd.append("image", this.selectedFile, this.selectedFile.name);
+        fd.append('image', this.selectedFile, this.selectedFile.name);
         this.http
-            .post("http://localhost:3000/uploadhandler", fd, {
+            .post('http://localhost:3000/uploadhandler', fd, {
             reportProgress: true,
-            observe: "events"
+            observe: 'events'
         })
             .subscribe(function (event) {
-            return (_this.message = "Upload successful");
+            return (_this.message = 'Upload successful');
         });
     };
     UploadPictureComponent.prototype.onUpload2 = function () {
         var _this = this;
         var fd = new FormData();
-        fd.append("image", this.selectedFile, this.selectedFile.name);
+        fd.append('image', this.selectedFile, this.selectedFile.name);
         this.http
-            .post("http://localhost:3000/uploadhandler", fd, {
+            .post('http://localhost:3000/uploadhandler', fd, {
             reportProgress: true,
-            observe: "events"
+            observe: 'events'
         })
             .subscribe(function (event) {
-            return (_this.message2 = "Upload successful");
+            return (_this.message2 = 'Upload successful');
         });
     };
     UploadPictureComponent.prototype.onURLinserted2 = function (image) {
@@ -905,16 +905,16 @@ var UploadPictureComponent = /** @class */ (function () {
         this.getImage2(image).subscribe(function (data) {
             _this.createImageFromBlob2(data);
         }, function (error) {
-            console.log("Error occured", error);
+            console.log('Error occured', error);
         });
     };
     UploadPictureComponent.prototype.getImage2 = function (imageUrl) {
-        return this.http.get(imageUrl, { responseType: "blob" });
+        return this.http.get(imageUrl, { responseType: 'blob' });
     };
     UploadPictureComponent.prototype.createImageFromBlob2 = function (image) {
         var _this = this;
         var reader = new FileReader();
-        reader.addEventListener("load", function () {
+        reader.addEventListener('load', function () {
             _this.image2 = reader.result; // here is the result you got from reader
         }, false);
         if (image) {
@@ -932,24 +932,24 @@ var UploadPictureComponent = /** @class */ (function () {
         console.log(this.selectedFile.name);
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("myURLInput"),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('myURLInput'),
         __metadata("design:type", Object)
     ], UploadPictureComponent.prototype, "myLocalInputVariable", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("myURLInput2"),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('myURLInput2'),
         __metadata("design:type", Object)
     ], UploadPictureComponent.prototype, "myLocalInputVariable2", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("myLocalInput"),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('myLocalInput'),
         __metadata("design:type", Object)
     ], UploadPictureComponent.prototype, "myLocalInputVariable3", void 0);
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])("myInput2"),
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('myInput2'),
         __metadata("design:type", Object)
     ], UploadPictureComponent.prototype, "myLocalInputVariable4", void 0);
     UploadPictureComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: "app-upload-picture",
+            selector: 'app-upload-picture',
             template: __webpack_require__(/*! ./upload-picture.component.html */ "./src/app/components/upload-picture/upload-picture.component.html"),
             styles: [__webpack_require__(/*! ./upload-picture.component.css */ "./src/app/components/upload-picture/upload-picture.component.css")]
         }),
@@ -1051,7 +1051,7 @@ var AuthService = /** @class */ (function () {
                 // Authorization: 'my-auth-token'
             })
         };
-        return this.http.post('http://localhost:3000/users/register', user, httpOptions);
+        return this.http.post('users/register', user, httpOptions);
     };
     AuthService.prototype.authenticateUser = function (user) {
         var httpOptions = {
@@ -1060,7 +1060,7 @@ var AuthService = /** @class */ (function () {
                 // Authorization: 'my-auth-token'
             })
         };
-        return this.http.post('http://localhost:3000/users/authenticate', user, httpOptions);
+        return this.http.post('users/authenticate', user, httpOptions);
     };
     AuthService.prototype.getProfile = function () {
         this.loadToken();
@@ -1070,7 +1070,7 @@ var AuthService = /** @class */ (function () {
                 Authorization: this.authToken
             })
         };
-        return this.http.get('http://localhost:3000/users/profile', httpOptions);
+        return this.http.get('users/profile', httpOptions);
     };
     AuthService.prototype.loadToken = function () {
         var token = localStorage.getItem('id_token');
