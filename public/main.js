@@ -721,7 +721,7 @@ var RegisterComponent = /** @class */ (function () {
                     cssClass: 'alert-success',
                     timeout: 3000
                 });
-                _this.router.navigate(['/login']);
+                _this.router.navigate(['/Login']);
             }
             else {
                 _this.flashmessage.show('something went wrong', {
