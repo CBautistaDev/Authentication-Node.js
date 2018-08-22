@@ -542,7 +542,7 @@ var HowItWorksComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  padding-top: 5%;\n  width: 25%;\n}\n\nh1 {\n  text-align: center;\n  padding-bottom: 15px;\n}\n\n.register-link {\n  padding-top: 15px;\n}\n"
+module.exports = ".container {\n  padding-top: 5%;\n  width: 25%;\n}\n\nh1 {\n  text-align: center;\n  padding-bottom: 15px;\n}\n\n.register-link {\n  padding-top: 15px;\n}\n\n@media only screen and (min-width: 320px) and (max-width: 479px) {\n  .container {\n    padding-top: 5%;\n    width: 100%;\n  }\n}\n\n@media only screen and (min-width: 480px) and (max-width: 767px) {\n  .container {\n    padding-top: 5%;\n    width: 100%;\n  }\n}\n\n@media only screen and (min-width: 768px) and (max-width: 991px) {}\n\n@media only screen and (min-width: 992px) and (max-width: 1999px) {}\n"
 
 /***/ }),
 
@@ -640,7 +640,7 @@ var LoginComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container {\n  padding-top: 5%;\n  width: 25%;\n}\n\nh1 {\n  text-align: center;\n  padding-bottom: 15px;\n}\n\n.cancel {\n  float: right;\n}\n\n.signin-link {\n  padding-top: 15px;\n}\n"
+module.exports = ".container {\n  padding-top: 5%;\n  width: 25%;\n}\n\nh1 {\n  text-align: center;\n  padding-bottom: 15px;\n}\n\n.cancel {\n  float: right;\n}\n\n.signin-link {\n  padding-top: 15px;\n}\n\n@media only screen and (min-width: 320px) and (max-width: 479px) {\n  .container {\n    padding-top: 5%;\n    width: 100%;\n  }\n}\n\n@media only screen and (min-width: 480px) and (max-width: 767px) {\n  .container {\n    padding-top: 5%;\n    width: 100%;\n  }\n}\n\n@media only screen and (min-width: 768px) and (max-width: 991px) {}\n\n@media only screen and (min-width: 992px) and (max-width: 1999px) {}\n"
 
 /***/ }),
 
