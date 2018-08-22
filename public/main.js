@@ -336,7 +336,7 @@ module.exports = ".banner {\n  width: 100%;\n  height: 350px;\n  background: url
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"banner\">\n  <nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <a a routerLink=\"/\" class=\"navbar-brand AIbrand\" id=\"AIbrand\">AI Machina</a>\n      </div>\n\n      <div class=\"nav navbar-nav navbar-right\">\n        <ul class=\"nav navbar-nav\">\n          <li routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\n            <a routerLink=\"/\">Home</a>\n          </li>\n          <li routerLinkActive=\"active\">\n            <a routerLink=\"/uploadPictures\">Convert</a>\n          </li>\n          <li routerLinkActive=\"active\">\n            <a routerLink=\"/about-us\">About</a>\n          </li>\n\n          <li routerLinkActive=\"active\">\n            <a *ngIf=\"!authService.loggedIn()\" routerLink=\"/Login\">Login</a>\n          </li>\n          <li routerLinkActive=\"active\">\n            <a *ngIf=\"!authService.loggedIn()\" routerLink=\"/register\">Register</a>\n          </li>\n          <li>\n            <a *ngIf=\"authService.loggedIn()\" (click)=\"onLogoutClick()\" href=\"#\"> Logout</a>\n          </li>\n\n\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <div class=\"about\">\n\n    <button type=\"button\" class=\"btn btn-dark convertbtn\" routerLink=\"/uploadPictures\"> Convert Image</button>\n  </div>\n</div>\n"
+module.exports = "<div class=\"banner\">\n  <nav class=\"navbar navbar-default\">\n    <div class=\"container-fluid\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle collapsed\" (click)=\"toggleState()\">\n          <span class=\"sr-only\">Toggle navigation</span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n        </button>\n        <!-- #1 -->\n\n        <a a routerLink=\"/\" class=\"navbar-brand AIbrand\" id=\"AIbrand\">AI Machina</a>\n      </div>\n      <div class=\"collapse navbar-collapse\" [ngClass]=\"{ 'in': isIn }\">\n        <div class=\"nav navbar-nav navbar-right\">\n          <ul class=\"nav navbar-nav\">\n            <li routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{exact: true}\">\n              <a routerLink=\"/\">Home</a>\n            </li>\n            <li routerLinkActive=\"active\">\n              <a routerLink=\"/uploadPictures\">Convert</a>\n            </li>\n            <li routerLinkActive=\"active\">\n              <a routerLink=\"/about-us\">About</a>\n            </li>\n\n            <li routerLinkActive=\"active\">\n              <a *ngIf=\"!authService.loggedIn()\" routerLink=\"/Login\">Login</a>\n            </li>\n            <li routerLinkActive=\"active\">\n              <a *ngIf=\"!authService.loggedIn()\" routerLink=\"/register\">Register</a>\n            </li>\n            <li>\n              <a *ngIf=\"authService.loggedIn()\" (click)=\"onLogoutClick()\" href=\"#\"> Logout</a>\n            </li>\n\n\n          </ul>\n        </div>\n      </div>\n    </div>\n  </nav>\n  <div class=\"about\">\n\n    <button type=\"button\" class=\"btn btn-dark convertbtn\" routerLink=\"/uploadPictures\"> Convert Image</button>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -373,7 +373,13 @@ var HeaderComponent = /** @class */ (function () {
         this.authService = authService;
         this.router = router;
         this.flashMessage = flashMessage;
+        this.isIn = false; // store state
     }
+    HeaderComponent.prototype.toggleState = function () {
+        // click handler
+        var bool = this.isIn;
+        this.isIn = bool === false ? true : false;
+    };
     HeaderComponent.prototype.ngOnInit = function () { };
     HeaderComponent.prototype.onLogoutClick = function () {
         this.authService.logout();
